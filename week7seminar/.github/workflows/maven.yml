@@ -22,11 +22,14 @@ jobs:
         cache: maven
         
     - name: Build with Maven
+      working-directory: ./week7seminar   
       run: mvn clean install
       
     - name: Run tests
+      working-directory: ./week7seminar  
       run: mvn test
       
     - name: Generate test report
       if: always()
+      working-directory: ./week7seminar   
       run: mvn surefire-report:report
